@@ -48,6 +48,7 @@ func setup_battler():
 	%skill_2_button/energy_label.set_text(str(skill_2_required_energy))
 	%skill_3_button/energy_label.set_text(str(skill_3_required_energy))
 	%skill_4_button/energy_label.set_text(str(skill_4_required_energy))
+	turn_update()
 func toggle_skill_menu():
 	if skill_menu_open:
 		toggle_skill_menu_anminations()
@@ -89,6 +90,22 @@ func input_focus():
 	%attack_button.grab_focus()
 func turn_update():
 	energy = battler.energy
+	if skill_1_required_energy > energy:
+		%skill_1_button.disabled = true
+	else:
+		%skill_1_button.disabled = false
+	if skill_2_required_energy > energy:
+		%skill_2_button.disabled = true
+	else:
+		%skill_2_button.disabled = false
+	if skill_3_required_energy > energy:
+		%skill_3_button.disabled = true
+	else:
+		%skill_3_button.disabled = false
+	if skill_4_required_energy > energy:
+		%skill_4_button.disabled = true
+	else:
+		%skill_4_button.disabled = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("bottom_button") && %skill_menu.visible:
 		toggle_skill_menu()
