@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="Final_team_game_CS399"
-run/main_scene="uid://vnukamkw0dmv"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +18,7 @@ config/icon="res://icon.svg"
 
 cheats="*res://scripts/global_scripts/cheats.gd"
 BattleService="*res://battle_system/battle_service.gd"
+settings="*res://scripts/global_scripts/settings.gd"
 
 [display]
 
@@ -29,8 +29,6 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 hero_ui=""
-player_battlers=""
-enemy_battlers=""
 
 [input]
 

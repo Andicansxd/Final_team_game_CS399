@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://d27nwhfbxcrcm"]
+[gd_scene load_steps=15 format=3 uid="uid://d27nwhfbxcrcm"]
 
 [ext_resource type="Script" uid="uid://wddir2cf2pkg" path="res://scripts/menu_scripts/options.gd" id="1_5gmal"]
-[ext_resource type="AudioStream" uid="uid://c487w1r1f316c" path="res://sounds/SFX/click.mp3" id="2_qgtfu"]
+[ext_resource type="AudioStream" uid="uid://c23c33w8ur4bu" path="res://sounds/SFX/click.mp3" id="2_dbu8v"]
 [ext_resource type="Texture2D" uid="uid://bg7md2nt41wdb" path="res://assets/ReturnIconNormal.png" id="3_dbu8v"]
 [ext_resource type="Texture2D" uid="uid://bv2a41ovb0dt0" path="res://assets/ReturnIconPress.png" id="4_81r5r"]
+[ext_resource type="Texture2D" uid="uid://uh7fyvkv75fr" path="res://assets/SliderIcon.png" id="4_bthii"]
+[ext_resource type="Texture2D" uid="uid://bp4exa8pud1w2" path="res://assets/ToggleIconDisabled.png" id="4_l6ncd"]
+[ext_resource type="Texture2D" uid="uid://b2tsao7uknog6" path="res://assets/ToggleIconDisabledHover.png" id="5_4tjjh"]
+[ext_resource type="Texture2D" uid="uid://jyf2rxa2axpl" path="res://assets/SliderHover.png" id="5_bthii"]
 [ext_resource type="Texture2D" uid="uid://b5ggnom7phv83" path="res://assets/ReturnIconHover.png" id="5_mevpy"]
+[ext_resource type="Texture2D" uid="uid://ckp85kmsfoh2y" path="res://assets/OptionsUI.png" id="6_81r5r"]
+[ext_resource type="Texture2D" uid="uid://cffx01uhcb07w" path="res://assets/SliderTick.png" id="6_ygnig"]
+[ext_resource type="StyleBox" uid="uid://c4nghqr6j41ob" path="res://style_textures/slider_texture_empty.tres" id="7_5lo0y"]
+[ext_resource type="StyleBox" uid="uid://tsteh5p81qe0" path="res://style_textures/slider_texture_fill.tres" id="8_7qvah"]
+[ext_resource type="StyleBox" uid="uid://qlayy5kryje4" path="res://style_textures/slider_texture_highlight.tres" id="9_u66vh"]
 
 [node name="Options" type="Control" node_paths=PackedStringArray("click_sound")]
 layout_mode = 3
@@ -17,17 +26,91 @@ script = ExtResource("1_5gmal")
 click_sound = NodePath("Click")
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_qgtfu")
+stream = ExtResource("2_dbu8v")
+bus = &"SFX"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 492.0
+offset_bottom = 320.0
+texture = ExtResource("6_81r5r")
+
+[node name="Volume" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 84.0
+offset_right = 420.0
+offset_bottom = 163.0
+theme_override_constants/separation = 16
+
+[node name="BGMusic" type="HSlider" parent="Volume"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_bthii")
+theme_override_icons/grabber_highlight = ExtResource("5_bthii")
+theme_override_icons/tick = ExtResource("6_ygnig")
+theme_override_styles/slider = ExtResource("7_5lo0y")
+theme_override_styles/grabber_area = ExtResource("8_7qvah")
+theme_override_styles/grabber_area_highlight = ExtResource("9_u66vh")
+value = 50.0
+
+[node name="BATMusic" type="HSlider" parent="Volume"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_bthii")
+theme_override_icons/grabber_highlight = ExtResource("5_bthii")
+theme_override_icons/tick = ExtResource("6_ygnig")
+theme_override_styles/slider = ExtResource("7_5lo0y")
+theme_override_styles/grabber_area = ExtResource("8_7qvah")
+theme_override_styles/grabber_area_highlight = ExtResource("9_u66vh")
+
+[node name="SFX" type="HSlider" parent="Volume"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_bthii")
+theme_override_icons/grabber_highlight = ExtResource("5_bthii")
+theme_override_icons/tick = ExtResource("6_ygnig")
+theme_override_styles/slider = ExtResource("7_5lo0y")
+theme_override_styles/grabber_area = ExtResource("8_7qvah")
+theme_override_styles/grabber_area_highlight = ExtResource("9_u66vh")
+
+[node name="Other" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 221.0
+offset_right = 420.0
+offset_bottom = 271.0
+theme_override_constants/separation = 13
+alignment = 2
+
+[node name="Gamma" type="HSlider" parent="Other"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_bthii")
+theme_override_icons/grabber_highlight = ExtResource("5_bthii")
+theme_override_icons/tick = ExtResource("6_ygnig")
+theme_override_styles/slider = ExtResource("7_5lo0y")
+theme_override_styles/grabber_area = ExtResource("8_7qvah")
+theme_override_styles/grabber_area_highlight = ExtResource("9_u66vh")
+min_value = 10.0
+value = 10.0
+
+[node name="Cheats" type="TextureButton" parent="Other"]
+layout_mode = 2
+texture_normal = ExtResource("4_l6ncd")
+texture_hover = ExtResource("5_4tjjh")
 
 [node name="Return" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 8.0
 offset_top = 16.0
-offset_right = 40.0
+offset_right = 32.0
 offset_bottom = 34.0
 texture_normal = ExtResource("3_dbu8v")
 texture_pressed = ExtResource("4_81r5r")
 texture_hover = ExtResource("5_mevpy")
 texture_focused = ExtResource("5_mevpy")
 
+[connection signal="value_changed" from="Volume/BGMusic" to="." method="_on_bg_music_vol_changed"]
+[connection signal="value_changed" from="Volume/BATMusic" to="." method="_on_battle_music_vol_changed"]
+[connection signal="value_changed" from="Volume/SFX" to="." method="_on_sfx_vol_changed"]
+[connection signal="value_changed" from="Other/Gamma" to="." method="_on_brightness_changed"]
+[connection signal="pressed" from="Other/Cheats" to="." method="_on_cheats_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

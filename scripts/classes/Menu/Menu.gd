@@ -8,10 +8,6 @@ class_name Menu
 var slide_duration: float = 1.5
 var active: bool = false
 
-func _ready() -> void:
-	if !default:
-		position.x = (get_viewport_rect().size.x)
-
 func summon() -> void:
 	var tween = create_tween()
 	tween.tween_property(self, "position:x", 0, slide_duration).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
@@ -27,3 +23,7 @@ func release() -> void:
 func activate_menu(menu: Menu) -> void:
 	release()
 	menu.summon()
+
+func trigger_if_default() -> void:
+	if !default:
+		position.x = (get_viewport_rect().size.x)

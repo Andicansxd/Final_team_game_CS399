@@ -9,9 +9,9 @@
 [node name="SaveSelect" parent="." node_paths=PackedStringArray("MainMenu") instance=ExtResource("1_l2t3x")]
 MainMenu = NodePath("../MainMenu")
 
+[node name="Options" parent="." node_paths=PackedStringArray("MainMenu") instance=ExtResource("2_l2t3x")]
+MainMenu = NodePath("../MainMenu")
+
 [node name="MainMenu" parent="." node_paths=PackedStringArray("Options", "SaveMenu") instance=ExtResource("1_qklv3")]
 Options = NodePath("../Options")
 SaveMenu = NodePath("../SaveSelect")
-
-[node name="Options" parent="." node_paths=PackedStringArray("MainMenu") instance=ExtResource("2_l2t3x")]
-MainMenu = NodePath("../MainMenu")

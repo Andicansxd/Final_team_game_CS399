@@ -5,6 +5,7 @@ extends TransitMenu
 @export var Credits: Control
 
 func _ready() -> void:
+	trigger_if_default()
 	enter()
 
 func _on_start_pressed() -> void:

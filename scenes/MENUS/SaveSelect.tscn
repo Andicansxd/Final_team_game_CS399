@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bg7md2nt41wdb" path="res://assets/ReturnIconNormal.png" id="2_18bqw"]
 [ext_resource type="Texture2D" uid="uid://bv2a41ovb0dt0" path="res://assets/ReturnIconPress.png" id="3_5a26e"]
 [ext_resource type="Texture2D" uid="uid://b5ggnom7phv83" path="res://assets/ReturnIconHover.png" id="4_jab2b"]
-[ext_resource type="AudioStream" uid="uid://c487w1r1f316c" path="res://sounds/SFX/click.mp3" id="5_pfduo"]
+[ext_resource type="AudioStream" uid="uid://c23c33w8ur4bu" path="res://sounds/SFX/click.mp3" id="5_pfduo"]
 
 [node name="SaveSelect" type="Control" node_paths=PackedStringArray("click_sound")]
 layout_mode = 3
@@ -29,5 +29,6 @@ texture_focused = ExtResource("4_jab2b")
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_pfduo")
+bus = &"SFX"
 
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
