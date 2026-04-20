@@ -18,8 +18,6 @@ func _on_hero_moved(move_index: int, battler_index: int, target_battler_array: A
 	print(battler_index, " has been called to move!")
 	print(move_index, " has been called!")
 	var battler: Battler = battler_array[battler_index]
-	print(battler_array[battler_index].move_array)
-	print(battler.move_array)
 	battler.select_move(move_index, target_battler_array)
 	battler_selected_move.emit()
 	print("Battler move decided: ", battler_index)
