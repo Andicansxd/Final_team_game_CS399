@@ -110,6 +110,7 @@ texture_focused = ExtResource("5_mevpy")
 
 [connection signal="value_changed" from="Volume/BGMusic" to="." method="_on_bg_music_vol_changed"]
 [connection signal="value_changed" from="Volume/BATMusic" to="." method="_on_battle_music_vol_changed"]
+[connection signal="drag_ended" from="Volume/SFX" to="." method="_on_sfx_drag_ended"]
 [connection signal="value_changed" from="Volume/SFX" to="." method="_on_sfx_vol_changed"]
 [connection signal="value_changed" from="Other/Gamma" to="." method="_on_brightness_changed"]
 [connection signal="pressed" from="Other/Cheats" to="." method="_on_cheats_pressed"]

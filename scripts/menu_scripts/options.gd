@@ -26,10 +26,18 @@ func _ready() -> void:
 	bg_music_index = AudioServer.get_bus_index("Background_Music")
 	sfx_index = AudioServer.get_bus_index("SFX")
 	
+	refresh()
+
+func refresh() -> void:
 	background_slider.value = settings.bg_music_vol
 	battle_slider.value = settings.bat_music_vol
 	SFX_slider.value = settings.sfx_vol
 	gamma_slider.value = settings.brightness
+	
+	AudioServer.set_bus_volume_db(bg_music_index, linear_to_db(background_slider.value))
+	AudioServer.set_bus_volume_db(battle_music_index, linear_to_db(battle_slider.value))
+	AudioServer.set_bus_volume_db(sfx_index, linear_to_db(SFX_slider.value))
+	get_owner().modulate = Color(gamma_slider.value / 100.0, gamma_slider.value / 100.0, gamma_slider.value / 100.0, 1)
 
 func _on_return_pressed() -> void:
 	click_sound.play()
@@ -59,9 +67,11 @@ func _on_sfx_vol_changed(value: float) -> void:
 func _on_brightness_changed(value: float) -> void:
 	settings.brightness = value
 	get_owner().modulate = Color(value / 100.0, value / 100.0, value / 100.0, 1)
-	print(value)
 
 func _on_cheats_pressed() -> void:
 	click_sound.play()
 	cheats_enabled = !cheats_enabled
 	update_cheats_texture()
+
+func _on_sfx_drag_ended(_value_changed: bool) -> void:
+	click_sound.play()
