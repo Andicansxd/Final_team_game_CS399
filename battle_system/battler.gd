@@ -23,7 +23,6 @@ func _ready():
 func select_move(index: int, targets: Array[Battler]):
 	print("Battler Selected Move!")
 	defending = false
-	print(move_array)
 	selected_move = move_array[index]
 	selected_targets = targets
 

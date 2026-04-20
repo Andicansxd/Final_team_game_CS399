@@ -100,8 +100,6 @@ func target_selection():
 	if target == null:
 		print("no target selected")
 		return
-	print(target)
-	print(target_array)
 	if target in target_array:
 		#print(all_battlers[hero_num_stored].move_array)
 		var argument_array: Array[Battler] = []
