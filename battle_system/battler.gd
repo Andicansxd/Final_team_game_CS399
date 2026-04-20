@@ -29,10 +29,10 @@ func select_move(index: int, targets: Array[Battler]):
 
 func play_animation(animation_name: StringName):
 	# play an animation for the battler here
-	var animator: AnimationPlayer = %AnimationPlayer
+	var sprite: AnimatedSprite2D  = %AnimatedSprite2D
 
-	animator.play(animation_name)
-	await animator.animation_finished
+	sprite.play(animation_name)
+	await sprite.animation_finished
 	print('Battler played animation')
 
 func damage(value: float):
