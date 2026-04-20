@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://b01l4oduhqk8g"
 
 [node name="EnemyController" type="Node" parent="." node_paths=PackedStringArray("battler_array")]
 script = ExtResource("4_ekamt")
-battler_array = [NodePath("../enemy_1_marker/temp_enemy_battler")]
+battler_array = [NodePath("../enemy_1_marker/temp_enemy_battler"), NodePath("../enemy_2_marker/Battler"), NodePath("../enemy_3_marker/Battler")]
 metadata/_custom_type_script = "uid://cycclnep1466q"
 
 [node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("player_ui", "battler_array")]
@@ -95,10 +95,23 @@ position = Vector2(51, 241)
 
 [node name="temp_enemy_battler" type="Node2D" parent="enemy_1_marker" groups=["enemy_battlers"]]
 script = ExtResource("4_4k1nj")
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("6_66ngm")])
 metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
 
 [node name="enemy_2_marker" type="Marker2D" parent="."]
 position = Vector2(50, 297)
 
+[node name="Battler" type="Node2D" parent="enemy_2_marker" groups=["enemy_battlers"]]
+position = Vector2(275, -1)
+script = ExtResource("4_4k1nj")
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("7_03edq")])
+metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
+
 [node name="enemy_3_marker" type="Marker2D" parent="."]
 position = Vector2(51, 195)
+
+[node name="Battler" type="Node2D" parent="enemy_3_marker" groups=["enemy_battlers"]]
+position = Vector2(-51, -195)
+script = ExtResource("4_4k1nj")
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("8_22uqi")])
+metadata/_custom_type_script = "uid://dyu8a5asjyy4h"

@@ -25,31 +25,26 @@ text = "hero 1"
 [node name="target_button_hero_2" type="Button" parent="target_button_container"]
 unique_name_in_owner = true
 layout_mode = 2
-toggle_mode = true
 text = "hero 2"
 
 [node name="target_button_hero_3" type="Button" parent="target_button_container"]
 unique_name_in_owner = true
 layout_mode = 2
-toggle_mode = true
 text = "hero 3"
 
 [node name="target_button_enemy_1" type="Button" parent="target_button_container"]
 unique_name_in_owner = true
 layout_mode = 2
-toggle_mode = true
 text = "enemy 1"
 
 [node name="target_button_enemy_2" type="Button" parent="target_button_container"]
 unique_name_in_owner = true
 layout_mode = 2
-toggle_mode = true
 text = "enemy 2"
 
 [node name="target_button_enemy_3" type="Button" parent="target_button_container"]
 unique_name_in_owner = true
 layout_mode = 2
-toggle_mode = true
 text = "enemy 3"
 
 [node name="TabContainer" type="TabContainer" parent="."]
