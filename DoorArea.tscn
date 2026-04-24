@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwx43gepc8iv4"]
+
+[ext_resource type="Script" uid="uid://0mhgu2bn3q0d" path="res://DoorArea.gd" id="1_vuel0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_prhem"]
+radius = 35.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Door_Area" type="Area2D" parent="."]
+script = ExtResource("1_vuel0")
+
+[node name="Door_Shape" type="CollisionShape2D" parent="Door_Area"]
+shape = SubResource("CircleShape2D_prhem")
+
+[connection signal="body_entered" from="Door_Area" to="Door_Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Door_Area" to="Door_Area" method="_on_body_exited"]
