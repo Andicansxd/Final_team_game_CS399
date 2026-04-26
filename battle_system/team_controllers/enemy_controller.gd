@@ -17,7 +17,7 @@ func decide_moves():
 			enemy.select_move(move_i, team)
 		else:
 			var target = team.pick_random()
-			enemy.select_move(move_i, target)
+			enemy.select_move(move_i, [target])
 	moves_decided.emit(self)
 			
 		
