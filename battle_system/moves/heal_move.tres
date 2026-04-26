@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="heal" load_steps=2 format=3 uid="uid://dxmxxim286koa"]
+
+[ext_resource type="Script" uid="uid://boh61dj43uh3g" path="res://battle_system/move scripts/heal.gd" id="1_x35tk"]
+
+[resource]
+script = ExtResource("1_x35tk")
+heal_amount = 40.0
+move_name = "Heal"
+animation_name = &"spell"
+energy_cost = 10
+same_team = true
