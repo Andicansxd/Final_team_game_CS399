@@ -39,13 +39,18 @@ func resolve_turn():
 	print('Resolving turn...')
 	var all_battlers: Array[Battler]
 	for team_controller in teams_dict.keys():
-		all_battlers.append(team_controller.battler_array)
+		for battler in team_controller.battler_array:
+			print(battler)
+			all_battlers.append(battler)
 	
 	# this (hopefully) sorts the array based on speed
 	all_battlers.sort_custom(_sort_by_speed)
 
 	for battler in all_battlers:
+		print("HHWIHAIOHWIAHGIAUWGIUDG")
+		print(battler.name, " is doing a move!")
 		await battler.selected_move.resolve_move(battler, battler.selected_targets)
+		
 	turn_resolved.emit()
 
 func _sort_by_speed(x: Battler, y: Battler) -> bool:

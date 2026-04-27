@@ -27,6 +27,8 @@ func select_move(index: int, targets: Array[Battler]):
 	selected_targets = targets
 
 func play_animation(animation_name: StringName):
+	if !%AnimatedSprite2D:
+		return
 	# play an animation for the battler here
 	var sprite: AnimatedSprite2D  = %AnimatedSprite2D
 

@@ -21,8 +21,7 @@ func decide_moves():
 			enemy.select_move(move_i, [target])
 	moves_decided.emit(self)
 			
-		
-
 
 func _on_turn_resolver_turn_resolved() -> void:
+	print("help")
 	decide_moves()
