@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://dvbhgtpinhj2p"]
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://dvbhgtpinhj2p"]
 
 [ext_resource type="Script" uid="uid://cuyg0w6vqilaa" path="res://battle_system/move.gd" id="1_fnvmd"]
+[ext_resource type="AudioStream" uid="uid://cxap4sacro0pw" path="res://sounds/SFX/meleeAttack.mp3" id="1_vtewa"]
 
 [resource]
 script = ExtResource("1_fnvmd")
 move_name = "Test 1"
 energy_cost = 70
+move_sound = ExtResource("1_vtewa")
 metadata/_custom_type_script = "uid://cuyg0w6vqilaa"

@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://day8nf58cjys6"]
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://day8nf58cjys6"]
 
 [ext_resource type="Script" uid="uid://cuyg0w6vqilaa" path="res://battle_system/move.gd" id="1_bu8x0"]
+[ext_resource type="AudioStream" uid="uid://0aqf5tyebfg5" path="res://sounds/SFX/enemyAttackSFX.mp3" id="1_kw02u"]
 
 [resource]
 script = ExtResource("1_bu8x0")
 move_name = "test 4"
 energy_cost = 47
+move_sound = ExtResource("1_kw02u")
 metadata/_custom_type_script = "uid://cuyg0w6vqilaa"

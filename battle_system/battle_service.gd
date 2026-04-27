@@ -1,9 +1,15 @@
 extends Node
 
 var turn_resolver
+static var sfx_player: AudioStreamPlayer
 
 func set_turn_resolver(_turn_resolver: TurnResolver):
 	turn_resolver = _turn_resolver
+
+static func play_sfx(sound: AudioStream):
+	if sound != null:
+		sfx_player.stream = sound
+		sfx_player.play()
 
 func get_same_team_from_battler(battler: Battler) -> Array[Battler]:
 	var team_controller: TeamController

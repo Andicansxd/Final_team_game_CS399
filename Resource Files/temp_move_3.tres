@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://bsoaps4spaalm"]
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://bsoaps4spaalm"]
 
+[ext_resource type="AudioStream" uid="uid://rcxceblv4yqc" path="res://sounds/SFX/Healing_item.mp3" id="1_4hsgr"]
 [ext_resource type="Script" uid="uid://cuyg0w6vqilaa" path="res://battle_system/move.gd" id="1_t2kys"]
 
 [resource]
 script = ExtResource("1_t2kys")
 move_name = "test 3"
 energy_cost = 90
+move_sound = ExtResource("1_4hsgr")
 metadata/_custom_type_script = "uid://cuyg0w6vqilaa"

@@ -43,6 +43,8 @@ metadata/_custom_type_script = "uid://b2tkn4g3ycy84"
 unique_name_in_owner = true
 turn_resolver = NodePath("../TurnResolver")
 
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+
 [node name="hero_infight_1" parent="." instance=ExtResource("2_th188")]
 unique_name_in_owner = true
 position = Vector2(372, 186)
