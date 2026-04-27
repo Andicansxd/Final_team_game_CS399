@@ -46,13 +46,35 @@ func resolve_turn():
 	all_battlers.sort_custom(_sort_by_speed)
 
 	for battler in all_battlers:
-		print(battler.name, " is doing a move!")
-		await battler.selected_move.resolve_move(battler, battler.selected_targets)
-		
+		if battler.health > 0:
+			print(battler.name, " is doing a move!")
+			await battler.selected_move.resolve_move(battler, battler.selected_targets)
+		if check_player_win():
+			print("player won")
+			return
+		if check_enemy_win():
+			print("enemy won")
+			return
 	clear_dict_bools()
-	
+
 	turn_resolved.emit()
 	print("Turn resolved!")
 
 func _sort_by_speed(x: Battler, y: Battler) -> bool:
 	return x.speed * x.selected_move.speed_mult < y.speed * y.selected_move.speed_mult
+
+func check_enemy_win() -> bool:
+	var dead := true
+	for battler in teams_array[0].battler_array:
+		if battler.health > 0:
+			dead = false
+		
+	return !dead
+
+func check_player_win():
+	var dead := true
+	for battler in teams_array[1].battler_array:
+		if battler.health > 0:
+			dead = false
+		
+	return !dead
