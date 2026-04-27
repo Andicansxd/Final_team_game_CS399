@@ -21,3 +21,8 @@ func _on_hero_moved(move_index: int, battler_index: int, target_battler_array: A
 	battler.select_move(move_index, target_battler_array)
 	battler_selected_move.emit()
 	print("Battler move decided: ", battler_index)
+
+
+func _on_turn_resolver_turn_resolved() -> void:
+	print("player should be trying to resolve it's moves")
+	decide_moves()

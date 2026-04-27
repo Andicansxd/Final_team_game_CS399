@@ -139,3 +139,4 @@ offset_bottom = 10.0
 linked_node = NodePath("../Enemy3")
 
 [connection signal="turn_resolved" from="TurnResolver" to="EnemyController" method="_on_turn_resolver_turn_resolved"]
+[connection signal="turn_resolved" from="TurnResolver" to="PlayerController" method="_on_turn_resolver_turn_resolved"]
