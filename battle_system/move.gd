@@ -6,14 +6,12 @@ class_name Move extends Resource
 @export var target_animation_name: StringName
 @export var energy_cost: int
 @export var speed_mult: float
-@export var move_sound: AudioStream
 
 @export_category("Valid Targets")
 @export var same_team: bool = false
 @export var all_members: bool = false
 
 func resolve_move(owner: Battler, targets: Array[Battler]):
-	BattleService.play_sfx(move_sound)
 	await owner.play_animation(animation_name)
 	await apply_change(owner, targets)
 	for target in targets:
