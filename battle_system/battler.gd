@@ -44,6 +44,7 @@ func damage(value: float):
 		health -= value/defense
 		print("Damaged battler by ", value/defense)
 	health_updated.emit()
+	print(name, " now has ", health, " hp")
 
 func heal(value: float):
 	health += value

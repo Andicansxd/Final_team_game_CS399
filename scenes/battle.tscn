@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://b01l4oduhqk8g"
 
 [node name="EnemyController" type="Node" parent="." node_paths=PackedStringArray("battler_array")]
 script = ExtResource("4_ekamt")
-battler_array = [NodePath("../enemy_1_marker/temp_enemy_battler"), NodePath("../enemy_2_marker/Battler"), NodePath("../enemy_3_marker/Battler")]
+battler_array = [NodePath("../enemy_1_marker/Enemy1"), NodePath("../enemy_2_marker/Enemy2"), NodePath("../enemy_3_marker/Enemy3")]
 metadata/_custom_type_script = "uid://cycclnep1466q"
 
 [node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("player_ui", "battler_array")]
@@ -94,7 +94,7 @@ linked_node = NodePath("../Battler")
 [node name="enemy_1_marker" type="Marker2D" parent="."]
 position = Vector2(51, 241)
 
-[node name="temp_enemy_battler" type="Node2D" parent="enemy_1_marker" groups=["enemy_battlers"]]
+[node name="Enemy1" type="Node2D" parent="enemy_1_marker" groups=["enemy_battlers"]]
 script = ExtResource("4_4k1nj")
 move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt")])
 metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
@@ -104,12 +104,12 @@ offset_left = -50.0
 offset_top = 12.0
 offset_right = -50.0
 offset_bottom = 12.0
-linked_node = NodePath("../temp_enemy_battler")
+linked_node = NodePath("../Enemy1")
 
 [node name="enemy_2_marker" type="Marker2D" parent="."]
 position = Vector2(50, 297)
 
-[node name="Battler" type="Node2D" parent="enemy_2_marker" groups=["enemy_battlers"]]
+[node name="Enemy2" type="Node2D" parent="enemy_2_marker" groups=["enemy_battlers"]]
 position = Vector2(275, -1)
 script = ExtResource("4_4k1nj")
 move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt")])
@@ -120,12 +120,12 @@ offset_left = -46.0
 offset_top = 14.0
 offset_right = -46.0
 offset_bottom = 14.0
-linked_node = NodePath("../Battler")
+linked_node = NodePath("../Enemy2")
 
 [node name="enemy_3_marker" type="Marker2D" parent="."]
 position = Vector2(51, 195)
 
-[node name="Battler" type="Node2D" parent="enemy_3_marker" groups=["enemy_battlers"]]
+[node name="Enemy3" type="Node2D" parent="enemy_3_marker" groups=["enemy_battlers"]]
 position = Vector2(-51, -195)
 script = ExtResource("4_4k1nj")
 move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt")])
@@ -136,4 +136,6 @@ offset_left = -52.0
 offset_top = 10.0
 offset_right = -52.0
 offset_bottom = 10.0
-linked_node = NodePath("../Battler")
+linked_node = NodePath("../Enemy3")
+
+[connection signal="turn_resolved" from="TurnResolver" to="EnemyController" method="_on_turn_resolver_turn_resolved"]

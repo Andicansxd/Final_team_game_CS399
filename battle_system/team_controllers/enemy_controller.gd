@@ -23,5 +23,5 @@ func decide_moves():
 			
 
 func _on_turn_resolver_turn_resolved() -> void:
-	print("help")
+	print("enemy should be doing move thing now")
 	decide_moves()
