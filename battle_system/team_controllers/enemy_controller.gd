@@ -6,6 +6,7 @@ func _ready() -> void:
 func decide_moves():
 	for enemy in battler_array:
 		var move_i: int = randi_range(0, enemy.move_array.size() - 1)
+		print(move_i)
 		var move := enemy.move_array[move_i]
 		var team: Array[Battler]
 		if move.same_team:

@@ -2,9 +2,9 @@ class_name Battler extends Node2D
 
 @export_category("STATS")
 @export var max_health: float
-var health: float 
+var health: float = 100
 @export var max_energy: float
-var energy: float = 50
+var energy: float = 100
 @export var speed: float
 @export var strength: float = 1.0
 @export var defense: float = 1.0

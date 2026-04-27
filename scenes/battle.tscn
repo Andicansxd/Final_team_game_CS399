@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cofoqc5v6bsab"]
+[gd_scene load_steps=17 format=3 uid="uid://cofoqc5v6bsab"]
 
 [ext_resource type="PackedScene" uid="uid://dfa3sdwffdgfm" path="res://scenes/ui_scenes/fight_screen_ui.tscn" id="1_dn72j"]
 [ext_resource type="Script" uid="uid://d0mnwhf0qagvr" path="res://scripts/battle.gd" id="1_lpir7"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cuyg0w6vqilaa" path="res://battle_system/move.gd" id="7_f4pi3"]
 [ext_resource type="Resource" uid="uid://bsoaps4spaalm" path="res://Resource Files/temp_move_3.tres" id="8_22uqi"]
 [ext_resource type="Resource" uid="uid://day8nf58cjys6" path="res://Resource Files/temp_move_4.tres" id="9_6ni85"]
+[ext_resource type="Resource" uid="uid://dqx2scgu1wvjl" path="res://battle_system/moves/attack_move.tres" id="9_ekamt"]
 [ext_resource type="PackedScene" uid="uid://dfxjl4e74c0se" path="res://scenes/ui_scenes/health_bar.tscn" id="10_03edq"]
 
 [node name="battle" type="Node2D"]
@@ -48,7 +49,7 @@ position = Vector2(372, 186)
 
 [node name="Battler" type="Node2D" parent="hero_infight_1" groups=["player_battlers"]]
 script = ExtResource("4_4k1nj")
-move_array = Array[ExtResource("7_f4pi3")]([ExtResource("6_66ngm"), ExtResource("6_66ngm"), ExtResource("6_66ngm"), ExtResource("7_03edq"), ExtResource("8_22uqi"), ExtResource("9_6ni85")])
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt"), ExtResource("6_66ngm"), ExtResource("6_66ngm"), ExtResource("7_03edq"), ExtResource("8_22uqi"), ExtResource("9_6ni85")])
 metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
 
 [node name="health_bar" parent="hero_infight_1" node_paths=PackedStringArray("linked_node") instance=ExtResource("10_03edq")]
@@ -64,7 +65,7 @@ position = Vector2(371, 239)
 
 [node name="Battler" type="Node2D" parent="hero_infight_2" groups=["player_battlers"]]
 script = ExtResource("4_4k1nj")
-move_array = Array[ExtResource("7_f4pi3")]([null, null, ExtResource("9_6ni85"), ExtResource("8_22uqi"), ExtResource("7_03edq"), ExtResource("6_66ngm")])
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt"), ExtResource("7_03edq"), ExtResource("9_6ni85"), ExtResource("8_22uqi"), ExtResource("7_03edq"), ExtResource("6_66ngm")])
 metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
 
 [node name="health_bar" parent="hero_infight_2" node_paths=PackedStringArray("linked_node") instance=ExtResource("10_03edq")]
@@ -80,7 +81,7 @@ position = Vector2(375, 287)
 
 [node name="Battler" type="Node2D" parent="hero_infight_3" groups=["player_battlers"]]
 script = ExtResource("4_4k1nj")
-move_array = Array[ExtResource("7_f4pi3")]([null, null, ExtResource("7_03edq"), ExtResource("9_6ni85"), ExtResource("6_66ngm"), ExtResource("8_22uqi")])
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt"), ExtResource("7_03edq"), ExtResource("7_03edq"), ExtResource("9_6ni85"), ExtResource("6_66ngm"), ExtResource("8_22uqi")])
 metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
 
 [node name="health_bar" parent="hero_infight_3" node_paths=PackedStringArray("linked_node") instance=ExtResource("10_03edq")]
@@ -95,8 +96,15 @@ position = Vector2(51, 241)
 
 [node name="temp_enemy_battler" type="Node2D" parent="enemy_1_marker" groups=["enemy_battlers"]]
 script = ExtResource("4_4k1nj")
-move_array = Array[ExtResource("7_f4pi3")]([ExtResource("6_66ngm")])
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt")])
 metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
+
+[node name="health_bar" parent="enemy_1_marker" node_paths=PackedStringArray("linked_node") instance=ExtResource("10_03edq")]
+offset_left = -50.0
+offset_top = 12.0
+offset_right = -50.0
+offset_bottom = 12.0
+linked_node = NodePath("../temp_enemy_battler")
 
 [node name="enemy_2_marker" type="Marker2D" parent="."]
 position = Vector2(50, 297)
@@ -104,8 +112,15 @@ position = Vector2(50, 297)
 [node name="Battler" type="Node2D" parent="enemy_2_marker" groups=["enemy_battlers"]]
 position = Vector2(275, -1)
 script = ExtResource("4_4k1nj")
-move_array = Array[ExtResource("7_f4pi3")]([ExtResource("7_03edq")])
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt")])
 metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
+
+[node name="health_bar" parent="enemy_2_marker" node_paths=PackedStringArray("linked_node") instance=ExtResource("10_03edq")]
+offset_left = -46.0
+offset_top = 14.0
+offset_right = -46.0
+offset_bottom = 14.0
+linked_node = NodePath("../Battler")
 
 [node name="enemy_3_marker" type="Marker2D" parent="."]
 position = Vector2(51, 195)
@@ -113,5 +128,12 @@ position = Vector2(51, 195)
 [node name="Battler" type="Node2D" parent="enemy_3_marker" groups=["enemy_battlers"]]
 position = Vector2(-51, -195)
 script = ExtResource("4_4k1nj")
-move_array = Array[ExtResource("7_f4pi3")]([ExtResource("8_22uqi")])
+move_array = Array[ExtResource("7_f4pi3")]([ExtResource("9_ekamt")])
 metadata/_custom_type_script = "uid://dyu8a5asjyy4h"
+
+[node name="health_bar" parent="enemy_3_marker" node_paths=PackedStringArray("linked_node") instance=ExtResource("10_03edq")]
+offset_left = -52.0
+offset_top = 10.0
+offset_right = -52.0
+offset_bottom = 10.0
+linked_node = NodePath("../Battler")

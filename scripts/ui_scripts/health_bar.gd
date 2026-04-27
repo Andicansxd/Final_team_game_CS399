@@ -16,5 +16,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func _on_health_updated():
-	#update the health bar
-	pass
+	$ProgressBar.set_value(linked_node.health)
